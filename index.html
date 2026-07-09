@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funny Photo Challenge</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#1f2937;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    padding:20px;
+}
+
+.card{
+    background:#374151;
+    padding:20px;
+    border-radius:15px;
+    margin:auto;
+    max-width:400px;
+}
+
+button{
+    padding:15px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.challenge{
+    font-size:24px;
+    margin:20px 0;
+}
+
+.score{
+    font-size:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎭 Funny Photo Challenge</h1>
+
+<div class="card">
+
+<p id="challenge" class="challenge">
+Press Start!
+</p>
+
+<button onclick="nextChallenge()">Start</button>
+
+<p class="score">
+Score:
+<span id="score">0</span>
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+const challenges=[
+"😜 Stick out your tongue",
+"😉 Wink one eye",
+"🤪 Cross your eyes",
+"😂 Make your funniest face",
+"😆 Pretend you're shocked",
+"😝 Pull your cheeks",
+"🤣 Biggest smile wins!"
+];
+
+let score=0;
+let current=-1;
+
+function nextChallenge(){
+
+current++;
+
+if(current>=challenges.length){
+
+document.getElementById("challenge").innerHTML=
+"🎉 Challenge Complete!";
+
+return;
+}
+
+document.getElementById("challenge").innerHTML=
+challenges[current];
+
+score+=10;
+
+document.getElementById("score").innerHTML=score;
+
+}
+
+</script>
+
+</body>
+</html>
